@@ -9,7 +9,7 @@
 
 
 
-  <meta name="date" content="2022-09-22" />
+  <meta name="date" content="2022-09-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -172,7 +172,7 @@ slide:not(.current) .plotly.html-widget{
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">2022-09-22</p>
+            <p style="margin-top: 6px; margin-left: -2px;">2022-09-25</p>
           </hgroup>
   </slide>
 
@@ -182,39 +182,30 @@ slide:not(.current) .plotly.html-widget{
 
 </article></slide><slide class=""><hgroup><h2>Overview</h2></hgroup><article  id="overview">
 
-<div class="columns-2">
-<div class="column">
-<p><a href='#8' title=''>Part 1:</a></p>
-
-<ul>
-<li>When to start</li>
-</ul>
-
-<p><a href='#15' title=''>Part 2:</a></p>
-
-<ul>
-<li>Ideal directory and data structure</li>
-<li>Adapting to confidential / big data</li>
-</ul></div>
-
-<div class="column">
-<p>Part 3:</p>
-
-<ul>
-<li>Ideal programming practices</li>
-<li>Secure coding techniques</li>
-</ul>
-
-<p>Part 4:</p>
-
-<ul>
-<li>Documenting what you did</li>
-<li>When to document</li>
-</ul></div></div>
+<table class = 'rmdtable'>
+<col width="44.444444%" />
+<col width="55.555556%" />
+<tr class="odd">
+<td align="left"><a href='#8' title=''>Part 1:</a></td>
+<td align="left">When to start</td>
+</tr>
+<tr class="even">
+<td align="left"><a href='#15' title=''>Part 2:</a></td>
+<td align="left">- Ideal directory and data structure <br/>- Adapting to confidential / big data</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href='#25' title=''>Part 3:</a></td>
+<td align="left">- Ideal programming practices <br/> - Secure coding techniques</td>
+</tr>
+<tr class="even">
+<td align="left"><a href='#48' title=''>Part 4:</a></td>
+<td align="left">- Documenting what you did <br/> - When to document</td>
+</tr>
+</table>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>But first…</h2></hgroup><article  id="but-first">
 
-</article></slide><slide class=""><hgroup><h2>Version your code and your results</h2></hgroup><article  id="version-your-code-and-your-results">
+</article></slide><slide class=""><hgroup><h2>Please Version your code and your results</h2></hgroup><article  id="please-version-your-code-and-your-results">
 
 <ul>
 <li>Even in restricted environment, use versioning</li>
@@ -358,20 +349,33 @@ if $step3 == 1  do &quot;$code/03_figures.do&quot;</pre>
 
 </article></slide><slide class=""><hgroup><h2>Project setup examples</h2></hgroup><article  id="project-setup-examples">
 
-<div class="columns-2">
-<div class="column">
+<table width="100%">
+
+<tr>
+
+<td width="50%">
+
 <pre >/inputs
 /outputs
 /code
-/paper</pre></div>
+/paper</pre>
 
-<div class="column">
+</td>
+
+<td>
+
 <pre >/datos/
     /brutos
     /limpiados
     /finales
 /codigo
-/articulo</pre></div></div>
+/articulo</pre>
+
+</td>
+
+</tr>
+
+</table>
 
 <p>It doesn’t really matter, as long as it is logical.</p>
 
@@ -395,8 +399,12 @@ if $step3 == 1  do &quot;$code/03_figures.do&quot;</pre>
 
 </article></slide><slide class=""><hgroup><h2>Project setup examples</h2></hgroup><article  id="project-setup-examples-1">
 
-<div class="columns-2">
-<div class="column">
+<table width="100%">
+
+<tr>
+
+<td width="50%">
+
 <p>This may no longer work:</p>
 
 <pre >/datos/
@@ -404,9 +412,12 @@ if $step3 == 1  do &quot;$code/03_figures.do&quot;</pre>
     /limpiados
     /finales
 /codigo
-/articulo</pre></div>
+/articulo</pre>
 
-<div class="column">
+</td>
+
+<td>
+
 <p>This may be what it looks like:</p>
 
 <pre >/proyecto/
@@ -418,7 +429,13 @@ if $step3 == 1  do &quot;$code/03_figures.do&quot;</pre>
      /articulo
 /secretos            (read-only)
      /impuestos      (read-only)
-     /salarios       (read-only)</pre></div></div>
+     /salarios       (read-only)</pre>
+
+</td>
+
+</tr>
+
+</table>
 
 <p>How do we handle directories outside of the project space?</p>
 
@@ -840,22 +857,26 @@ releasable/figure1.pdf</pre>
 
 </article></slide><slide class=""><hgroup><h2>Three parts to README: timing</h2></hgroup><article  id="three-parts-to-readme-timing">
 
-<div class="columns-2">
-<div class="column">
-<ul>
-<li>Data availability (and citations)</li>
-<li>Computer requirements</li>
-<li>Description of processing</li>
-</ul></div>
+<table class = 'rmdtable'>
+<tr class="odd">
+<td align="left">- Data availability (and citations):</td>
+<td align="left"><strong>Start of project, edit at the end</strong></td>
+</tr>
+<tr class="even">
+<td align="left">- Computer requirements:</td>
+<td align="left">Middle of project</td>
+</tr>
+<tr class="odd">
+<td align="left">- Description of processing:</td>
+<td align="left">Middle of project</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</table>
 
-<div class="column">
-<ul>
-<li>Start of project, edit at the end</li>
-<li>Middle of project</li>
-<li>Middle of project</li>
-</ul></div></div>
-
-<p>with the end really just a last read.</p>
+<p>with the end really just a last read/edit.</p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Wrapping it all up</h2></hgroup><article  id="wrapping-it-all-up">
 
