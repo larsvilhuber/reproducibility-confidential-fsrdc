@@ -498,7 +498,7 @@ if $step3 == 1  do &quot;$code/03_figures.do&quot;</pre>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Step further: Use configuration files</h2></hgroup><article  id="step-further-use-configuration-files">
 
-</article></slide><slide class=""><hgroup><h2>Stata configuration files</h2></hgroup><article  class="smaller" id="stata-configuration-files">
+</article></slide><slide class=""><hgroup><h2>Stata configuration files</h2></hgroup><article  id="stata-configuration-files" class="smaller">
 
 <p>As file structure becomes more complex, configure short-cuts (globals, variables, etc.)</p>
 
@@ -507,7 +507,7 @@ global outputdata &quot;/proyecto/datos/limpiados&quot; // this is where you wou
 global results    &quot;/proyecto/articulo&quot;        // All tables for inclusion in your paper go here
 global programs   &quot;/proyecto/codigo&quot;          // All programs (which you might &quot;include&quot;) are to be found here</pre>
 
-</article></slide><slide class=""><hgroup><h2>Stata configuration files</h2></hgroup><article  class="smaller" id="stata-configuration-files-1">
+</article></slide><slide class=""><hgroup><h2>Stata configuration files</h2></hgroup><article  id="stata-configuration-files-1" class="smaller">
 
 <p>Expanded to include non-project space directories:</p>
 
@@ -519,7 +519,7 @@ global outputdata &quot;/proyecto/datos/limpiados&quot; // this is where you wou
 global results    &quot;/proyecto/articulo&quot;        // All tables for inclusion in your paper go here
 global programs   &quot;/proyecto/codigo&quot;          // All programs (which you might &quot;include&quot;) are to be found here</pre>
 
-</article></slide><slide class=""><hgroup><h2>Stata configuration files</h2></hgroup><article  class="smaller" id="stata-configuration-files-2">
+</article></slide><slide class=""><hgroup><h2>Stata configuration files</h2></hgroup><article  id="stata-configuration-files-2" class="smaller">
 
 <p>Or something like this:</p>
 
@@ -531,7 +531,7 @@ global outputdata &quot;/project/data/outputs&quot;     // this is where you wou
 global results    &quot;/project/article/tables&quot;   // All tables for inclusion in your paper go here
 global programs   &quot;/project/code&quot;             // All programs (which you might &quot;include&quot;) are to be found here</pre>
 
-</article></slide><slide class=""><hgroup><h2>Stata configuration files</h2></hgroup><article  class="smaller" id="stata-configuration-files-3">
+</article></slide><slide class=""><hgroup><h2>Stata configuration files</h2></hgroup><article  id="stata-configuration-files-3" class="smaller">
 
 <p>Let’s expand it to contain another parameter:</p>
 
@@ -545,7 +545,7 @@ global programs   &quot;/project/code&quot;             // All programs (which y
 
 global checksum1 386698503</pre>
 
-</article></slide><slide class=""><hgroup><h2>Which is then included</h2></hgroup><article  class="smaller" id="which-is-then-included">
+</article></slide><slide class=""><hgroup><h2>Which is then included</h2></hgroup><article  id="which-is-then-included" class="smaller">
 
 <pre class = 'prettyprint lang-stata'>// Header of main.do
 
@@ -607,7 +607,7 @@ graph twoway n logprofit</pre>
 
 <p>The redacted program above will no longer run, and will be very tedious to un-redact if a subsequent replicator obtains legitimate access to the confidential data.</p>
 
-</article></slide><slide class=""><hgroup><h2>Better</h2></hgroup><article  class="smaller" id="better">
+</article></slide><slide class=""><hgroup><h2>Better</h2></hgroup><article  id="better" class="smaller">
 
 <p>Simply replacing the confidential data with replacement that are valid placeholders in the programming language of your choice is already better. Here’s the confidential version of the file:</p>
 
@@ -625,7 +625,7 @@ by county: collapse (count)  n=$confemploy (mean) logprofit
 drop if n&lt;$confmincell
 graph twoway n logprofit</pre>
 
-</article></slide><slide class=""><hgroup><h2>Better</h2></hgroup><article  class="smaller" id="better-1">
+</article></slide><slide class=""><hgroup><h2>Better</h2></hgroup><article  id="better-1" class="smaller">
 
 <p>and this would be the released file, part of the replication package:</p>
 
@@ -651,7 +651,7 @@ graph twoway n logprofit</pre>
 
 <p>We also introduce the use of a separate file for all the confidential parameters, which may be more convenient, since now, no redaction is needed - the confidential file is simply dropped (but should be documented).</p>
 
-</article></slide><slide class=""><hgroup><h2>Best</h2></hgroup><article  class="smaller" id="best-1">
+</article></slide><slide class=""><hgroup><h2>Best</h2></hgroup><article  id="best-1" class="smaller">
 
 <p>Main file <code>main.do</code>:</p>
 
@@ -671,7 +671,7 @@ cap mkdir &quot;$safepath&quot;
 
 //============ end parameters ======================</pre>
 
-</article></slide><slide class=""><hgroup><h2>Best</h2></hgroup><article  class="smaller" id="best-2">
+</article></slide><slide class=""><hgroup><h2>Best</h2></hgroup><article  id="best-2" class="smaller">
 
 <p>Main file <code>main.do</code> (continued)</p>
 
@@ -694,7 +694,7 @@ use &quot;${safepath}/figure1.dta&quot;, clear
 graph twoway n logprofit
 graph export &quot;${safepath}/figure1.pdf&quot;, replace</pre>
 
-</article></slide><slide class=""><hgroup><h2>Best</h2></hgroup><article  class="smaller" id="best-3">
+</article></slide><slide class=""><hgroup><h2>Best</h2></hgroup><article  id="best-3" class="smaller">
 
 <p>Auxiliary file <code>include/confparms.do</code> (not released)</p>
 
@@ -706,7 +706,7 @@ global confemploy  q3e
 global confmincell 10
 //============ end confidential parameters =========</pre>
 
-</article></slide><slide class=""><hgroup><h2>Best</h2></hgroup><article  class="smaller" id="best-4">
+</article></slide><slide class=""><hgroup><h2>Best</h2></hgroup><article  id="best-4" class="smaller">
 
 <p>Auxiliary file <code>include/confparms_template.do</code> (this is released)</p>
 
@@ -814,7 +814,7 @@ releasable/figure1.pdf</pre>
 <li>The two are not always the same, but are both relevant.</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Examples</h2></hgroup><article  class="smaller" id="examples">
+</article></slide><slide class=""><hgroup><h2>Examples</h2></hgroup><article  id="examples" class="smaller">
 
 <p>Examples include</p>
 
@@ -841,7 +841,7 @@ releasable/figure1.pdf</pre>
 
 <p>NOTE: Project-related files are available for 10 years as of 2015.</p>
 
-</article></slide><slide class=""><hgroup><h2>Examples</h2></hgroup><article  class="smaller" id="examples-1">
+</article></slide><slide class=""><hgroup><h2>Examples</h2></hgroup><article  id="examples-1" class="smaller">
 
 <p>Examples include</p>
 
